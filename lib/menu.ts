@@ -547,16 +547,8 @@ function renderGlobalActionsSection(
     return `${displayLabel} | ${parts.join(" ")}`;
   };
 
-  lines.push(action(
-    "↻ Update all collections",
-    "update-all",
-    ["shortcut=CmdOrCtrl+U"],
-  ));
-  lines.push(action(
-    "⚡ Embed all (new only)",
-    "embed-all",
-    ["shortcut=CmdOrCtrl+E"],
-  ));
+  lines.push(action("↻ Update all collections", "update-all"));
+  lines.push(action("⚡ Embed all (new only)", "embed-all"));
   lines.push(action("⟳ Restart MCP daemon", "restart-daemon"));
 
   // Stop / Start row is exclusive (SPEC §10.2).
@@ -627,7 +619,7 @@ function renderUtilityFooter(
 /** Renders the Preferences / About footer block (matches first-run menus). */
 function renderPreferencesFooter(): string[] {
   return [
-    `⚙ Preferences… | bash="open" param1="-t" param2="${CONFIG_PATH}" terminal=false shortcut=CmdOrCtrl+Comma`,
+    `⚙ Preferences… | bash="open" param1="-t" param2="${CONFIG_PATH}" terminal=false`,
     `ⓘ About qmd-swiftbar | bash="open" param1="https://github.com/ggfevans/qmd-swiftbar" terminal=false`,
   ];
 }

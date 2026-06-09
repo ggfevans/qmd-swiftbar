@@ -1,6 +1,7 @@
 import { ensureDir } from "@std/fs";
 import { join } from "@std/path";
 import type { ActionId, JobInfo } from "./types.ts";
+import { qmdExecEnv } from "./exec-env.ts";
 import {
   atomicCreateJobPidFile as productionAtomicCreateJobPidFile,
   cacheDir,
@@ -94,6 +95,7 @@ async function productionSpawnDetached(
     `( ${commandString}; echo "EXIT_CODE=$?" >> "${logPath}" ) >> "${logPath}" 2>&1 &\necho $!`;
   const proc = new Deno.Command("bash", {
     args: ["-c", shell],
+    env: qmdExecEnv(),
     stdout: "piped",
     stderr: "null",
   });
@@ -181,6 +183,7 @@ async function productionRunQmdContextList(
   try {
     const proc = new Deno.Command("qmd", {
       args: ["context", "list", "-c", collection],
+      env: qmdExecEnv(),
       stdout: "piped",
       stderr: "piped",
     });

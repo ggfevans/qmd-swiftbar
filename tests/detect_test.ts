@@ -67,12 +67,27 @@ Deno.test("detectFirstRunState: hasQmdBinary false → 'no-qmd'", async () => {
   assertEquals(result, "no-qmd");
 });
 
-Deno.test("detectFirstRunState: canImportSdk false → 'no-qmd'", async () => {
+Deno.test("detectFirstRunState: canImportSdk false with index present → 'ok' (SDK optional)", async () => {
+  // When the SDK can't import (Deno permission issues, runtime panic),
+  // but the binary is found and the index exists, degrade optimistically
+  // to 'ok' rather than 'no-collections'.
   const result = await detectFirstRunState(
     makeConfig(),
     makeProbes({ canImportSdk: () => Promise.resolve(false) }),
   );
-  assertEquals(result, "no-qmd");
+  assertEquals(result, "ok");
+});
+
+Deno.test("detectFirstRunState: canImportSdk false with no index → 'no-collections'", async () => {
+  // SDK can't import AND index doesn't exist — genuinely no collections.
+  const result = await detectFirstRunState(
+    makeConfig(),
+    makeProbes({
+      canImportSdk: () => Promise.resolve(false),
+      indexExists: () => Promise.resolve(false),
+    }),
+  );
+  assertEquals(result, "no-collections");
 });
 
 Deno.test("detectFirstRunState: indexExists false → 'no-collections'", async () => {

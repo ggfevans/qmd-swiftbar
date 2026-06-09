@@ -65,8 +65,8 @@ Collections (4) | size=10 color=#8a8a8e shell=
   ⓘ View context… | bash="<PLUGIN_PATH>" param1="--action" param2="show-context" param3="--collection" param4="Rackula" terminal=false refresh=true
 ---
 Global actions | size=10 color=#8a8a8e shell=
-↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true shortcut=CmdOrCtrl+U
-⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true shortcut=CmdOrCtrl+E
+↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true
+⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true
 ⟳ Restart MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="restart-daemon" terminal=false refresh=true
 ■ Stop MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="stop-daemon" terminal=false refresh=true
 🧹 Cleanup orphaned data… | bash="<PLUGIN_PATH>" param1="--action" param2="cleanup" terminal=false refresh=true
@@ -74,7 +74,7 @@ Global actions | size=10 color=#8a8a8e shell=
 ⧉ Copy MCP endpoint URL | bash="bash" param1="-c" param2="echo -n 'http://localhost:8181' | pbcopy" terminal=false
 ›_ Show qmd status in Terminal | bash="qmd" param1="status" terminal=true
 ---
-⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false shortcut=CmdOrCtrl+Comma
+⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false
 ⓘ About qmd-swiftbar | bash="open" param1="https://github.com/ggfevans/qmd-swiftbar" terminal=false
 
 `;
@@ -144,8 +144,8 @@ Collections (4) | size=10 color=#8a8a8e shell=
   ⓘ View context… | bash="<PLUGIN_PATH>" param1="--action" param2="show-context" param3="--collection" param4="Rackula" terminal=false refresh=true
 ---
 Global actions | size=10 color=#8a8a8e shell=
-↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true shortcut=CmdOrCtrl+U
-⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true shortcut=CmdOrCtrl+E
+↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true
+⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true
 ⟳ Restart MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="restart-daemon" terminal=false refresh=true
 ■ Stop MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="stop-daemon" terminal=false refresh=true
 🧹 Cleanup orphaned data… | bash="<PLUGIN_PATH>" param1="--action" param2="cleanup" terminal=false refresh=true
@@ -153,7 +153,7 @@ Global actions | size=10 color=#8a8a8e shell=
 ⧉ Copy MCP endpoint URL | bash="bash" param1="-c" param2="echo -n 'http://localhost:8181' | pbcopy" terminal=false
 ›_ Show qmd status in Terminal | bash="qmd" param1="status" terminal=true
 ---
-⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false shortcut=CmdOrCtrl+Comma
+⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false
 ⓘ About qmd-swiftbar | bash="open" param1="https://github.com/ggfevans/qmd-swiftbar" terminal=false
 
 `;
@@ -223,8 +223,8 @@ Collections (4) | size=10 color=#8a8a8e shell=
   ⓘ View context… | bash="<PLUGIN_PATH>" param1="--action" param2="show-context" param3="--collection" param4="Rackula" terminal=false refresh=true
 ---
 Global actions | size=10 color=#8a8a8e shell=
-↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true shortcut=CmdOrCtrl+U
-⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true shortcut=CmdOrCtrl+E
+↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true
+⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true
 ⟳ Restart MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="restart-daemon" terminal=false refresh=true
 ▶ Start MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="start-daemon" terminal=false refresh=true
 🧹 Cleanup orphaned data… | bash="<PLUGIN_PATH>" param1="--action" param2="cleanup" terminal=false refresh=true
@@ -232,7 +232,7 @@ Global actions | size=10 color=#8a8a8e shell=
 ⧉ Copy MCP endpoint URL | bash="bash" param1="-c" param2="echo -n 'http://localhost:8181' | pbcopy" terminal=false
 ›_ Show qmd status in Terminal | bash="qmd" param1="status" terminal=true
 ---
-⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false shortcut=CmdOrCtrl+Comma
+⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false
 ⓘ About qmd-swiftbar | bash="open" param1="https://github.com/ggfevans/qmd-swiftbar" terminal=false
 
 `;
@@ -303,8 +303,8 @@ Collections (4) | size=10 color=#8a8a8e shell=
   ⓘ View context… | bash="<PLUGIN_PATH>" param1="--action" param2="show-context" param3="--collection" param4="Rackula" terminal=false refresh=true
 ---
 Global actions | size=10 color=#8a8a8e shell=
-Running: update… (1m) | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true shortcut=CmdOrCtrl+U disabled=true
-⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true shortcut=CmdOrCtrl+E
+Running: update… (1m) | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true disabled=true
+⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true
 ⟳ Restart MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="restart-daemon" terminal=false refresh=true
 ■ Stop MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="stop-daemon" terminal=false refresh=true
 🧹 Cleanup orphaned data… | bash="<PLUGIN_PATH>" param1="--action" param2="cleanup" terminal=false refresh=true
@@ -312,7 +312,7 @@ Running: update… (1m) | bash="<PLUGIN_PATH>" param1="--action" param2="update-
 ⧉ Copy MCP endpoint URL | bash="bash" param1="-c" param2="echo -n 'http://localhost:8181' | pbcopy" terminal=false
 ›_ Show qmd status in Terminal | bash="qmd" param1="status" terminal=true
 ---
-⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false shortcut=CmdOrCtrl+Comma
+⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false
 ⓘ About qmd-swiftbar | bash="open" param1="https://github.com/ggfevans/qmd-swiftbar" terminal=false
 
 `;
@@ -369,8 +369,8 @@ Status | size=10 color=#8a8a8e shell=
 Collections (0) | size=10 color=#8a8a8e shell=
 ---
 Global actions | size=10 color=#8a8a8e shell=
-↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true shortcut=CmdOrCtrl+U
-⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true shortcut=CmdOrCtrl+E
+↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true
+⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true
 ⟳ Restart MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="restart-daemon" terminal=false refresh=true
 ■ Stop MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="stop-daemon" terminal=false refresh=true
 🧹 Cleanup orphaned data… | bash="<PLUGIN_PATH>" param1="--action" param2="cleanup" terminal=false refresh=true
@@ -379,7 +379,7 @@ Global actions | size=10 color=#8a8a8e shell=
 ›_ Show qmd status in Terminal | bash="qmd" param1="status" terminal=true
 ⚠ Show last error | bash="open" param1="-t" param2="<CACHE_DIR>/error.log" terminal=false
 ---
-⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false shortcut=CmdOrCtrl+Comma
+⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false
 ⓘ About qmd-swiftbar | bash="open" param1="https://github.com/ggfevans/qmd-swiftbar" terminal=false
 
 `;
@@ -451,8 +451,8 @@ Collections (4) | size=10 color=#8a8a8e shell=
   ⓘ View context… | bash="<PLUGIN_PATH>" param1="--action" param2="show-context" param3="--collection" param4="Rackula" terminal=false refresh=true
 ---
 Global actions | size=10 color=#8a8a8e shell=
-↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true shortcut=CmdOrCtrl+U
-⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true shortcut=CmdOrCtrl+E
+↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true
+⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true
 ⟳ Restart MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="restart-daemon" terminal=false refresh=true
 ■ Stop MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="stop-daemon" terminal=false refresh=true
 🧹 Cleanup orphaned data… | bash="<PLUGIN_PATH>" param1="--action" param2="cleanup" terminal=false refresh=true
@@ -461,7 +461,7 @@ Global actions | size=10 color=#8a8a8e shell=
 ›_ Show qmd status in Terminal | bash="qmd" param1="status" terminal=true
 ⚠ Show last error | bash="open" param1="-t" param2="<CACHE_DIR>/error.log" terminal=false
 ---
-⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false shortcut=CmdOrCtrl+Comma
+⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false
 ⓘ About qmd-swiftbar | bash="open" param1="https://github.com/ggfevans/qmd-swiftbar" terminal=false
 
 `;
@@ -532,8 +532,8 @@ Collections (4) | size=10 color=#8a8a8e shell=
   ⓘ View context… | bash="<PLUGIN_PATH>" param1="--action" param2="show-context" param3="--collection" param4="Rackula" terminal=false refresh=true
 ---
 Global actions | size=10 color=#8a8a8e shell=
-↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true shortcut=CmdOrCtrl+U
-⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true shortcut=CmdOrCtrl+E
+↻ Update all collections | bash="<PLUGIN_PATH>" param1="--action" param2="update-all" terminal=false refresh=true
+⚡ Embed all (new only) | bash="<PLUGIN_PATH>" param1="--action" param2="embed-all" terminal=false refresh=true
 ⟳ Restart MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="restart-daemon" terminal=false refresh=true
 ■ Stop MCP daemon | bash="<PLUGIN_PATH>" param1="--action" param2="stop-daemon" terminal=false refresh=true
 🧹 Cleanup orphaned data… | bash="<PLUGIN_PATH>" param1="--action" param2="cleanup" terminal=false refresh=true
@@ -541,7 +541,7 @@ Global actions | size=10 color=#8a8a8e shell=
 ⧉ Copy MCP endpoint URL | bash="bash" param1="-c" param2="echo -n 'http://localhost:8181' | pbcopy" terminal=false
 ›_ Show qmd status in Terminal | bash="qmd" param1="status" terminal=true
 ---
-⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false shortcut=CmdOrCtrl+Comma
+⚙ Preferences… | bash="open" param1="-t" param2="<CONFIG_PATH>" terminal=false
 ⓘ About qmd-swiftbar | bash="open" param1="https://github.com/ggfevans/qmd-swiftbar" terminal=false
 
 `;
