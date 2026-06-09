@@ -1,5 +1,6 @@
 import type { Config, FirstRunState } from "./types.ts";
 import { withTimeout } from "./time.ts";
+import { qmdExecEnv } from "./exec-env.ts";
 
 // ─── Probe contract ────────────────────────────────────────────
 
@@ -26,6 +27,7 @@ export type Probes = {
 async function probeHasQmdBinary(): Promise<boolean> {
   const cmd = new Deno.Command("qmd", {
     args: ["--version"],
+    env: qmdExecEnv(),
     stdout: "null",
     stderr: "null",
   });
@@ -88,19 +90,19 @@ const PRODUCTION_PROBES: Probes = {
 
 // ─── Public API ────────────────────────────────────────────────
 
-const PER_CHECK_TIMEOUT_MS = 100;
+const PER_CHECK_TIMEOUT_MS = 500;
 
 /**
  * Layered first-run detection per SPEC §5.2 / §12.
  *
  * Cascade order (any failure or timeout short-circuits):
  *   1. qmd binary on $PATH        → 'no-qmd' on fail
- *   2. qmd SDK importable         → 'no-qmd' on fail
+ *   2. qmd SDK importable         → 'no-collections' on fail
  *   3. index DB file exists       → 'no-collections' on fail
  *   4. listCollections non-empty  → 'no-collections' on fail
  *   5. any collection doc_count>0 → 'ok' else 'empty-index'
  *
- * Each probe is bounded by a 100ms timeout (worst-case 500ms total).
+ * Each probe is bounded by a 500ms timeout (worst-case 2.5s total).
  * Never throws: unexpected errors log to stderr and resolve to 'no-qmd'.
  */
 export async function detectFirstRunState(
@@ -122,6 +124,10 @@ export async function detectFirstRunState(
     if (!hasBinary) return "no-qmd";
 
     // Check 2: SDK importable.
+    // If the SDK can't import (Deno permission issues, runtime panic),
+    // skip to step 3 (indexExists) — the SDK is optional for detection.
+    // Steps 3+ only need the SDK for listCollections; indexExists uses
+    // Deno.stat which doesn't require the SDK at all.
     let canImport = false;
     try {
       canImport = await withTimeout(
@@ -130,9 +136,11 @@ export async function detectFirstRunState(
         "canImportSdk",
       );
     } catch {
-      return "no-qmd";
+      // SDK import failed — skip to index check.
     }
-    if (!canImport) return "no-qmd";
+    // If SDK didn't import, skip listCollections (step 4) later
+    // and rely on the index file existing as the signal.
+    const skipListCollections = !canImport;
 
     // Check 3: index DB file present.
     let indexPresent = false;
@@ -148,6 +156,14 @@ export async function detectFirstRunState(
     if (!indexPresent) return "no-collections";
 
     // Check 4: at least one collection registered.
+    // If the SDK couldn't import, skip this check — the index file
+    // existing (step 3) is sufficient to know qmd is configured.
+    if (skipListCollections) {
+      // Index file exists but we can't verify collections via SDK.
+      // Return 'ok' optimistically — the index file being present means
+      // qmd has been used and collections likely exist.
+      return "ok";
+    }
     let collections: Array<{ name: string; doc_count: number }> = [];
     try {
       collections = await withTimeout(

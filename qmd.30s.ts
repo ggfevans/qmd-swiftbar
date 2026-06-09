@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --allow-net=localhost:8181 --allow-read=$HOME/.cache/qmd,$HOME/.config/qmd-swiftbar,$HOME/.cache/qmd-swiftbar --allow-write=$HOME/.cache/qmd-swiftbar,$HOME/.config/qmd-swiftbar --allow-run=qmd,open,osascript,kill,bash --allow-env=HOME,PATH,EDITOR,QMD_SWIFTBAR_CACHE_DIR
+#!/usr/bin/env -S deno run --allow-net=localhost:8181 --allow-read=$HOME/.cache/qmd,$HOME/.config/qmd-swiftbar,$HOME/.cache/qmd-swiftbar --allow-write=$HOME/.cache/qmd-swiftbar,$HOME/.config/qmd-swiftbar --allow-run=/opt/homebrew/bin/qmd,/usr/local/bin/qmd,qmd,open,osascript,kill,bash --allow-env=HOME,PATH,EDITOR,QMD_SWIFTBAR_CACHE_DIR
 
 // <swiftbar.title>qmd-swiftbar</swiftbar.title>
 // <swiftbar.version>v1.0.0</swiftbar.version>
